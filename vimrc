@@ -1,7 +1,7 @@
 " begin vim-plug
 call plug#begin()
 
-Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 Plug 'mileszs/ack.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive'
@@ -82,7 +82,7 @@ set directory^=~/.vim/_temp//      " where to put swap files.
 
 " Set theme
 set background=dark
-colorscheme solarized
+colorscheme base16-darktooth
 
 " Statusline
 if has("statusline") && !&cp
