@@ -25,3 +25,6 @@ zplug load --verbose
 
 # aliases
 alias dc='docker-compose'
+
+# source profile for paths
+source ~/.profile
