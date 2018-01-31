@@ -12,6 +12,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'moll/vim-node'
+Plug 'leafgarland/typescript-vim'
+Plug 'shougo/vimproc.vim', {'do' : 'make'}
+Plug 'quramy/tsuquyomi'
+Plug 'valloric/youcompleteme', { 'do': './install.py' }
 
 call plug#end()
 
@@ -113,8 +117,22 @@ if has("autocmd")
   " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType python setlocal tabstop=4 shiftwidth=4
 
+  au FileType php setlocal tabstop=4 shiftwidth=4
+
   " Remember last location in file, but not for commit messages.
   " see :help last-position-jump
   au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g`\"" | endif
 endif
+
+" Disable Arrow keys in Escape mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Disable Arrow keys in Insert mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
