@@ -15,7 +15,8 @@ Plug 'moll/vim-node'
 Plug 'leafgarland/typescript-vim'
 Plug 'shougo/vimproc.vim', {'do' : 'make'}
 Plug 'quramy/tsuquyomi'
-Plug 'valloric/youcompleteme', { 'do': './install.py' }
+" Plug 'valloric/youcompleteme', { 'do': './install.py' }
+
 
 call plug#end()
 
@@ -84,8 +85,14 @@ set backupdir^=~/.vim/_backup//    " where to put backup files.
 set directory^=~/.vim/_temp//      " where to put swap files.
 
 " Set theme
-set background=dark
-colorscheme base16-darktooth
+let iterm_profile = $ITERM_PROFILE
+if iterm_profile == "Light"
+  set background=light
+  colorscheme base16-tomorrow
+else
+  set background=dark
+  colorscheme base16-tomorrow-night
+endif
 
 " Statusline
 if has("statusline") && !&cp
