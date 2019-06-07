@@ -1,10 +1,10 @@
-source ~/.zplug/init.zsh
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 # pull in random oh-my-zsh features
 zplug "lib/completion",                         from:oh-my-zsh
 zplug "lib/directories",                        from:oh-my-zsh
 zplug "lib/history",                            from:oh-my-zsh
-zplug "plugins/dirpersist",                     from:oh-my-zsh
 
 
 # history search on typed command
@@ -20,7 +20,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # install any uninstalled plugins
 zplug check || zplug install
 
-zplug load --verbose
+zplug load
 
 
 # aliases
